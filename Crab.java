@@ -21,5 +21,9 @@ public class Crab extends Actor
         if(Greenfoot.isKeyDown("left")){
             super.turn(-3);
         }
+        if(isTouching(Worm.class)){
+            removeTouching(Worm.class);
+            Greenfoot.playSound("eating.wav");
+        }
     }
 }
