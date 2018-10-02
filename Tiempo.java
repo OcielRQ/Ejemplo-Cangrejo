@@ -19,7 +19,7 @@ public class Tiempo extends Actor
     {
         timer = new SimpleTimer();//se crea el temporizador
         contador = new Counter("Tiempo: ");//esta pantalla es la que se va mostrar como en este caso necesitamos tiempo asi la llamamos
-        contador.setValue(30);//establece el valor del contador en este caso 30 segundos (depende de como tengas acomodada la barra de velocidad)
+        contador.setValue(60);//establece el valor del contador en este caso 30 segundos (depende de como tengas acomodada la barra de velocidad)
         
     }
     //Se ejecuta al agregar un objeto al mundo
@@ -37,7 +37,6 @@ public class Tiempo extends Actor
                 Greenfoot.stop();
             }
             timer.mark();//Reinicia el contador cada periodo de 1000
-            
         }
     }    
 }
