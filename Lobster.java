@@ -13,9 +13,16 @@ public class Lobster extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int pasos;
-    
+    private Counter contador;
     public Lobster(){
         pasos = 0;
+      
+        contador = new Counter("Vidas: ");
+        contador.setValue(5); 
+    }
+     protected void addedToWorld(World world)
+    {
+        world.addObject(contador, 200, 20);
     }
     public void act() 
     {
@@ -26,7 +33,11 @@ public class Lobster extends Actor
             pasos = 0; 
         }
         if(isTouching(Crab.class)){
-            removeTouching(Crab.class); 
+            contador.setValue(contador.getValue()-1);
+            setLocation(280,200);
+            if(contador.getValue()==0){
+                Greenfoot.stop();
+            }
         }
     }    
 }
