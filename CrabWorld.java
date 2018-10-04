@@ -11,6 +11,7 @@ public class CrabWorld extends greenfoot.World
     private int nGus;
     private Lobster lobster;
     private Crab crab;
+    private GreenfootSound musica;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -24,7 +25,16 @@ public class CrabWorld extends greenfoot.World
         addObject(lobster,253,199);
         crab = new Crab();
         addObject(crab,244,440);
+        GreenfootSound musica = new GreenfootSound("ufo-t-balt.mp3");
         prepare();
+    }
+    public void started()
+    {
+        musica.playLoop();
+    }
+    public void stopped()
+    {
+        musica.pause();
     }
     public Lobster accedeLangosta()
     {
